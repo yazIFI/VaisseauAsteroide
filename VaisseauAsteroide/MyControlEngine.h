@@ -7,13 +7,15 @@
 
 class MyControlEngine :public ControlEngine {
 	std::vector<Dame * > *dames;
-	std::vector<Missile * > *missiles;
+	std::vector<Missile * > *missiles;// = new std::vector < Missile * > ;
 	std::vector<Asteroide *> *asteroides = new std::vector < Asteroide * >;
 
 public:
 	MyControlEngine();
-	MyControlEngine(std::vector<Dame * > * dames_) :dames(dames_){}
-	MyControlEngine(std::vector<Missile * > * missiles_) :missiles(missiles_){}
+	MyControlEngine(std::vector<Dame * > * dames_, std::vector<Missile * > * missiles_) :
+		dames(dames_),
+		missiles(missiles_){}
+	//MyControlEngine(std::vector<Missile * > * missiles_) :missiles(missiles_){}
 	MyControlEngine(std::vector<Asteroide * > * asteroides_) :asteroides(asteroides_){}
 	~MyControlEngine();
 

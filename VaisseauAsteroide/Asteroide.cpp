@@ -4,34 +4,40 @@
 void Asteroide::draw(){
 	std::vector<float> *vx = new std::vector<float>;
 	std::vector<float> *vy = new std::vector<float>;
-	float x = posX;
-	float y = posY;
 
-	vx->push_back(x);
-	vy->push_back(y);
-	vx->push_back(x - 0.05);
-	vy->push_back(y);
-	vx->push_back(x - 0.1);
-	vy->push_back(y - 0.05);
-	vx->push_back(x - 0.1);
-	vy->push_back(y - 0.1);
-	vx->push_back(x - 0.05);
-	vy->push_back(y - 0.15);
-	vx->push_back(x);
-	vy->push_back(y - 0.15);
-	vx->push_back(x + 0.05);
-	vy->push_back(y - 0.1);
-	vx->push_back(x + 0.05);
-	vy->push_back(y - 0.05);
-	vx->push_back(x);
-	vy->push_back(y);
+	vx->push_back(posX);
+	vy->push_back(posY);
+	vx->push_back(posX - 0.025);
+	vy->push_back(posY);
+	vx->push_back(posX - 0.05);
+	vy->push_back(posY - 0.025);
+	vx->push_back(posX - 0.05);
+	vy->push_back(posY - 0.05);
+	vx->push_back(posX - 0.025);
+	vy->push_back(posY  - 0.075);
+	vx->push_back(posX);
+	vy->push_back(posY - 0.075);
+	vx->push_back(posX + 0.025);
+	vy->push_back(posY - 0.05);
+	vx->push_back(posX + 0.025);
+	vy->push_back(posY - 0.025);
+	vx->push_back(posX);
+	vy->push_back(posY);
 
-	GraphicPrimitives::drawFillPolygone2D(*vx, *vy, 1.0f, 0.6f, 0.5f, 1.0f);
+	GraphicPrimitives::drawFillPolygone2D(*vx, *vy, r, g, b, 1.0f);// 0.6f, 0.5f, 1.0f);
 	delete vx;
 	delete vy;
 }
 
 void Asteroide::tick(){
+	if (posX > -1.0){
+		posX -= VposX;
+	}
+}
 
-	posX -= VposX;
+bool Asteroide::isCollided(float mposX, float aposX, float mposY, float aposY){
+	if (((mposX - aposX) <= 0.01) && (((mposY - aposY) <= 0.00002))){
+		return true;
+	}
+	return false;
 }

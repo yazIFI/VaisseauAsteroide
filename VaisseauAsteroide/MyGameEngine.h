@@ -16,9 +16,10 @@ public:
 
 	MyGameEngine();
 
-	MyGameEngine(std::vector<Dame *> *dames_, std::vector<Asteroide * > * asteroides_) :
+	MyGameEngine(std::vector<Dame *> *dames_, std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missilies_) :
 		dames(dames_),
-		asteroides(asteroides_)
+		asteroides(asteroides_),
+		missiles(missilies_)
 
 	{
 

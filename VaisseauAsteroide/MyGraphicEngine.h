@@ -5,13 +5,9 @@
 #include "Missile.h"
 #include "Asteroide.h"
 
+using namespace std;
+
 class MyGraphicEngine :public GraphicEngine {
-
-
-
-
-
-
 
 	char * str;
 public:
@@ -22,15 +18,22 @@ public:
 	int col;
 	MyGraphicEngine();
 
-	MyGraphicEngine(std::vector<Dame *> * dames_, std::vector<Asteroide * > * asteroides_) :
+	MyGraphicEngine(std::vector<Dame *> * dames_, std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missiles_) :
 		dames(dames_),
-		asteroides(asteroides_)
-	{}
+		asteroides(asteroides_),
+		missiles(missiles_)
+	{
+		if (MessageBox(NULL, "Voulez vous un vaisseau Bleu?", "CHOIX DE LA COULEUR DU VAISSEAU", 0 + MB_YESNO + MB_ICONQUESTION) == 6)
+		{
+			cout << "vous avez choisie un vaisseau de couleur bleu :) " << endl;
+		}
+	}
 	~MyGraphicEngine();
 
 	float x, y, w, h, r, g, b;
 	virtual void Draw();
 	void color();
+	void traceRedLine();
 	virtual void reshape(int width, int height);
 
 

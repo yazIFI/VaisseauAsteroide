@@ -12,10 +12,11 @@ int main(int argc, char * argv[])
 
 	std::vector<Dame *> dames;
 	std::vector<Asteroide *> asteroides;
+	std::vector<Missile *> missiles;
 
-	GraphicEngine * dge = new MyGraphicEngine(&dames, &asteroides);
-	GameEngine * dgme = new MyGameEngine(&dames, &asteroides);
-	ControlEngine * dce = new MyControlEngine(&dames);
+	GraphicEngine * dge = new MyGraphicEngine(&dames, &asteroides,&missiles);
+	GameEngine * dgme = new MyGameEngine(&dames, &asteroides,&missiles);
+	ControlEngine * dce = new MyControlEngine(&dames,&missiles);
 
 	e.setGraphicEngine(dge);
 	e.setGameEngine(dgme);
