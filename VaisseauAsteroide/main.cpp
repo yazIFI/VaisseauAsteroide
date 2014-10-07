@@ -22,7 +22,9 @@ int main(int argc, char * argv[])
 	e.setGameEngine(dgme);
 	e.setControlEngine(dce);
 
-
+	for (int i = 0; i < 10; i++){
+		cout << (float)(rand() % 10) << endl;
+	}
 	e.start();
 	return 0;
 }

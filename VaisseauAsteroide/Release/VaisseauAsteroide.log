@@ -1,16 +1,16 @@
-﻿La génération a démarré 06/10/2014 20:59:01.
-     1>Projet "C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" sur le nœud 2 (Build cible(s)).
+﻿La génération a démarré 07/10/2014 22:27:47.
+     1>Projet "C:\Users\yezide\Desktop\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
          C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyGameEngine.cpp
          MyGameEngine.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\Asteroide.h(29): warning C4520: 'Asteroide' : plusieurs constructeurs par défaut spécifiés
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\Dame.h(27): warning C4520: 'Dame' : plusieurs constructeurs par défaut spécifiés
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\Missile.h(28): warning C4520: 'Missile' : plusieurs constructeurs par défaut spécifiés
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Asteroide.h(30): warning C4520: 'Asteroide' : plusieurs constructeurs par défaut spécifiés
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Dame.h(27): warning C4520: 'Dame' : plusieurs constructeurs par défaut spécifiés
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Missile.h(28): warning C4520: 'Missile' : plusieurs constructeurs par défaut spécifiés
      1>MyGameEngine.cpp(17): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGameEngine.cpp(29): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGameEngine.cpp(32): warning C4018: '<' : incompatibilité signed/unsigned
+     1>MyGameEngine.cpp(28): warning C4018: '<' : incompatibilité signed/unsigned
+     1>MyGameEngine.cpp(31): warning C4018: '<' : incompatibilité signed/unsigned
        Link:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\VaisseauAsteroide.exe" /NOLOGO /LIBPATH:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\libWin" engine.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\VaisseauAsteroide.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\VaisseauAsteroide.lib" /MACHINE:X86 /SAFESEH Release\Asteroide.obj
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.exe" /NOLOGO /LIBPATH:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\libWin" engine.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.lib" /MACHINE:X86 /SAFESEH Release\Asteroide.obj
          Release\Dame.obj
          Release\main.obj
          Release\Missile.obj
@@ -19,14 +19,14 @@
          Release\MyGraphicEngine.obj
          Génération de code en cours
          Fin de la génération du code
-     1>engine.lib(GraphicPrimitives.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GraphicPrimitives.obj)' ou sur 'C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
-     1>engine.lib(Engine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(Engine.obj)' ou sur 'C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
-     1>engine.lib(GameEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GameEngine.obj)' ou sur 'C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
-     1>engine.lib(ControlEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(ControlEngine.obj)' ou sur 'C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
-     1>engine.lib(GraphicEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GraphicEngine.obj)' ou sur 'C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
-         VaisseauAsteroide.vcxproj -> C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\Release\VaisseauAsteroide.exe
-     1>Génération du projet "C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" terminée (Build cible(s)).
+     1>engine.lib(GraphicPrimitives.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GraphicPrimitives.obj)' ou sur 'C:\Users\yezide\Desktop\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
+     1>engine.lib(Engine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(Engine.obj)' ou sur 'C:\Users\yezide\Desktop\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
+     1>engine.lib(GameEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GameEngine.obj)' ou sur 'C:\Users\yezide\Desktop\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
+     1>engine.lib(ControlEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(ControlEngine.obj)' ou sur 'C:\Users\yezide\Desktop\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
+     1>engine.lib(GraphicEngine.obj) : warning LNK4099: PDB 'vc120.pdb' n'a pu être trouvé avec 'engine.lib(GraphicEngine.obj)' ou sur 'C:\Users\yezide\Desktop\VaisseauAsteroide\Release\vc120.pdb' ; l'objet sera lié sans informations de débogage
+         VaisseauAsteroide.vcxproj -> C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.exe
+     1>Génération du projet "C:\Users\yezide\Desktop\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:03.30
+Temps écoulé 00:00:02.85

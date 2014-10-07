@@ -25,5 +25,6 @@ public:
 	void tick();
 	void drawAsteroide();
 	bool isCollided(float mposX, float aposX, float aposY,float mposY);
+	bool heFreed(float x);
 
 };

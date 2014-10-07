@@ -16,14 +16,13 @@ void MyGameEngine::idle(){
 	
 	for (int i = 0; i < dames->size(); i++) {
 
-		if (rand() < 3000){
-			missiles->push_back(new Missile((*dames)[i]->posX+0.04, (*dames)[i]->posY+0.07));
+		if ((rand() %2) == 0){
+			missiles->push_back(new Missile((*dames)[i]->posX+0.08, (*dames)[i]->posY+0.07));
 		}
 		(*dames)[i]->tick();
 	}
-	if (rand() < 200){
-		asteroides->push_back(new Asteroide(1, ((float)(rand() % 10)) / 10));
-		asteroides->push_back(new Asteroide(1, ((float)(rand() % 10)) / 10));
+	if (rand() < 400){
+		asteroides->push_back(new Asteroide(1, (((float)(rand() % 10)) / 6) - 0.8));
 	}
 
 	for (int i = 0; i < asteroides->size(); i++) {
