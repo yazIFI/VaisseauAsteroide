@@ -68,20 +68,38 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Asteroide.cpp" />
+    <ClCompile Include="Case.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Dame.cpp" />
+    <ClCompile Include="ListAsteroides.cpp" />
+    <ClCompile Include="ListVaisseau.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Missile.cpp" />
+    <ClCompile Include="Life.cpp" />
     <ClCompile Include="MyControlEngine.cpp" />
     <ClCompile Include="MyGameEngine.cpp" />
     <ClCompile Include="MyGraphicEngine.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Price.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="Vaisseau.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroide.h" />
+    <ClInclude Include="Case.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Dame.h" />
+    <ClInclude Include="ListAsteroides.h" />
+    <ClInclude Include="ListVaisseau.h" />
     <ClInclude Include="Missile.h" />
+    <ClInclude Include="Life.h" />
     <ClInclude Include="MyControlEngine.h" />
     <ClInclude Include="MyGameEngine.h" />
     <ClInclude Include="MyGraphicEngine.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Price.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="Vaisseau.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

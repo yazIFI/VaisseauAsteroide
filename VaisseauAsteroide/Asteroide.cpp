@@ -30,7 +30,7 @@ void Asteroide::draw(){
 
 	vx->push_back(posX); vy->push_back(posY);
 
-	GraphicPrimitives::drawOutlinedPolygone2D(*vx, *vy, r, g, b, 1.0f);
+	GraphicPrimitives::drawFillPolygone2D(*vx2, *vy2, r, g, b, 1.0f);
 	delete vx, vy, vx2, vy2;
 }
 
@@ -39,15 +39,20 @@ void Asteroide::tick(){
 		//posY = ((float)(rand() % 10) / 10);
 }
 
-bool Asteroide::isCollided(float mposX, float aposX, float mposY, float aposY){
-	std::cout << "debeug :" << (abs(mposY - aposY)) << std::endl;
-	if ((abs((mposX - aposX)) <= 0.02)  && ((abs((mposY - aposY)) <= 0.15))){
+bool Asteroide::isCollidedMissile(Missile *missile){
+	if ((abs((this->posX - missile->posX)) <= 0.16)){
 		return true;
 	}
 	return false;
 }
-
-
+bool Asteroide::isCollidedVaisseau(Vaisseau *vaisseau){
+	if ((abs(vaisseau->getPosX1() - posX) <= 0.2) && 
+		(((abs(posY - vaisseau->getPosY2()) == 0.16)) || ((abs(vaisseau->getPosY2() - posY) <= 0.16)))){
+		
+		return true;
+	}
+	return false;
+}
 bool Asteroide::heFreed(float x){
 	if (x <= -1){
 		return true;

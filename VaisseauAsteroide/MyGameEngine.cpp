@@ -6,24 +6,30 @@
 
 using namespace std;
 
+
+
 MyGameEngine::~MyGameEngine(){
 	delete dames;
 	delete missiles;
 	delete asteroides;
+	delete vaisseaux;
 }
 
 void MyGameEngine::idle(){
-	
-	for (int i = 0; i < dames->size(); i++) {
-
-		if ((rand() %2) == 0){
-			missiles->push_back(new Missile((*dames)[i]->posX+0.08, (*dames)[i]->posY+0.07));
+		if (((rand() % 37) == 0) && (asteroides->size() >0)) {
+			asteroides->push_back(new Asteroide(1 , coordAst[(rand() % 10)]));
 		}
-		(*dames)[i]->tick();
+	
+	
+	for (int i = 0; i < vaisseaux->size(); i++) {
+		if ((rand() % 2) == 0){
+			((*vaisseaux)[i]->missilesV)->push_back(new Missile((*vaisseaux)[i]->getPosX3(), (*vaisseaux)[i]->getPosY3()));
+		}
+		(*vaisseaux)[i]->tick();
+		
+		
 	}
-	if (rand() < 400){
-		asteroides->push_back(new Asteroide(1, (((float)(rand() % 10)) / 6) - 0.8));
-	}
+	
 
 	for (int i = 0; i < asteroides->size(); i++) {
 		(*asteroides)[i]->tick();

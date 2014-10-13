@@ -2,91 +2,104 @@
 #include "MyGraphicEngine.h"
 #include "Dame.h"
 #include "Missile.h"
-
+#include "Vaisseau.h"
+#include "Case.h"
+#include "Score.h"
 MyControlEngine::MyControlEngine(){}
 
-
 float r1, g1, b1 = 1.0f;
+int herewego = 0;
+int score = 10;
+std::vector<Case *> *listC = new std::vector < Case * > ;
+
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 
 		float x1 = (x - 400) / 400.f;
-		float y1 = (y - 300) / -300.f;  	
-		//std::cout << "DEBEUG~~~~~~~~~~~~~~~~~~~~~ BEFOR" << x1 << ": " << y1 << std::endl;
-		float ix = 0.8;
-		float iy = 0.8;
-		float w = 0.18;
-		float h = 0.18;
+		float y1 = (y - 300) / -300.f;
 
-		
-		cout << "y1 " << y1 << endl << "x1 " << x1 << endl;
-		if (y1 >= 0.8){
-			if ((x1 >= -0.6) && (x1 <= -0.4)){
-				r1 = 1.f;
-				g1 = 0.5f;
-				b1 = 0.0f;
-				
-			}
-			else if ((x1 >= -0.4) && (x1 <= -0.2)){
-				r1 = 0.0f;
-				g1 = 0.0f;
-				b1 = 0.5f;
-			
-			}
-			else if((x1 >= -0.2) && (x1 <= 0.0)){
-				r1 = 0.5f;
-				g1 = 1.0f;
-				b1 = 0.5f;
-				
-			}
-			else{
-				r1 = 0.0f;
-				g1 = 0.0f;
-				b1 = 0.0f;
-			}
-
-		}
-		
-		for (int k = 0; k<10; k++){
-			if ((y1 <= iy) && (y1 >= (iy - h))){
-				for (int j = 0; j<10; j++){
-					if ((x1 <= ix) && (x1 >= (ix - w))){ 
-						x1 = (ix - w); y1 = (iy - h); 
-						if (iy <= 1.0){
-							dames->push_back(new Dame(x1, y1, r1, g1, b1));
-							
-						}
-						j = 10; k = 10; }
-
-					ix -= w;
-				}
-			}
-			iy -= h;
-		}
-
-	//	std::cout << "DEBEUG~~~~~~~~~~~~~~~~~~~~~" << x1 << ": " << y1 << std::endl;
+		int caseChoisie = ((int)((x1 + 1) / 0.18) + (10 * (int)((y1 + 1) / 0.18)));
+		triangleSelected(x1, y1);
+		listCases(listC);
+		remplirVectVaisseaux(listVaisseaux, listC, caseChoisie);
+		addAsteroide(x1, y1);
 
 	}
+	
 }
 
 MyControlEngine::~MyControlEngine(){
 	delete asteroides;
+	delete listVaisseaux;
+	delete listC;
+	delete missiles;
 }
 
-int MyControlEngine::change(float x, float y){
-	float ix = 1;
-	float iy = 1;
 
-	for (int k = 0; k<5; k++){
-		if ((y <= iy) && (y >= (iy - 0.4))){
-			for (int j = 0; j<5; j++){
-				if ((x <= ix) && (x >= (ix - 0.4))){ return j + k; }
 
-				ix -= 0.4;
-			}
+void MyControlEngine::remplirVectVaisseaux(std::vector<Vaisseau *> *v,std::vector<Case *> *c, int nbCase){
+	if (c->size() >= nbCase){
+		if (nbCase <= 100 && (*c)[nbCase]->getPosX() < 0.7){
+			v->push_back(new Vaisseau((*c)[nbCase]->getPosX(), (*c)[nbCase]->getPosY(), r1, g1, b1,
+				new Missile((*c)[nbCase]->getPosX() + 0.08, (*c)[nbCase]->getPosY() + 0.07)));
+			
 		}
-		iy -= 0.4;
 	}
-	return -22;
+
+}
+
+void MyControlEngine::addAsteroide(float x, float y){
+	if ((x >= 0.2) && (y >= 0.8) && herewego == 0){
+		asteroides->push_back(new Asteroide(x, y));
+		herewego += 1;
+	}
+}
+
+void MyControlEngine::listCases(std::vector<Case *> *c){
+	float tempX = -1.0;
+	float tempY = -1.0;
+	for (int i = 0; i < 10; i++){
+		for (int j = 0; j < 10; j++){
+			//colorer les cases 
+			c->push_back(new Case(tempX, tempY, 0.0, 0.0, 0.0));
+
+			tempX += 0.18;
+		}
+		tempX = -1.0;
+		tempY += 0.18;
+
+	}
+
+}
+
+
+void MyControlEngine::triangleSelected(float xx, float yy){
+
+	if (yy >= 0.8){
+		if ((xx >= -0.6) && (xx <= -0.4)){
+			r1 = 1.f;
+			g1 = 0.5f;
+			b1 = 0.0f;
+
+		}
+		else if ((xx >= -0.4) && (xx <= -0.2)){
+			r1 = 0.0f;
+			g1 = 0.0f;
+			b1 = 0.5f;
+
+		}
+		else if ((xx >= -0.2) && (xx <= 0.0)){
+			r1 = 0.5f;
+			g1 = 1.0f;
+			b1 = 0.5f;
+
+		}
+		else{
+			r1 = 0.0f;
+			g1 = 0.0f;
+			b1 = 0.0f;
+		}
+
+	}
 }

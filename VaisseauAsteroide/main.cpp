@@ -13,18 +13,19 @@ int main(int argc, char * argv[])
 	std::vector<Dame *> dames;
 	std::vector<Asteroide *> asteroides;
 	std::vector<Missile *> missiles;
-
-	GraphicEngine * dge = new MyGraphicEngine(&dames, &asteroides,&missiles);
-	GameEngine * dgme = new MyGameEngine(&dames, &asteroides,&missiles);
-	ControlEngine * dce = new MyControlEngine(&dames,&missiles);
-
+	std::vector<Vaisseau *> vaisseaux;
+	
+	GraphicEngine * dge = new MyGraphicEngine(&dames, &asteroides,&missiles,&vaisseaux);
+	GameEngine * dgme = new MyGameEngine(&dames, &asteroides,&missiles,&vaisseaux);
+	ControlEngine * dce = new MyControlEngine(&dames, &missiles, &vaisseaux,&asteroides);
+	
 	e.setGraphicEngine(dge);
 	e.setGameEngine(dgme);
 	e.setControlEngine(dce);
+	
 
-	for (int i = 0; i < 10; i++){
-		cout << (float)(rand() % 10) << endl;
-	}
 	e.start();
+	
+	system("pause");
 	return 0;
 }

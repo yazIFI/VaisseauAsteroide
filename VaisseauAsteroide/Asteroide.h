@@ -1,17 +1,17 @@
 #pragma once
 #include "GraphicPrimitives.h"
 #include "Missile.h"
+#include "Vaisseau.h"
+#include "ListAsteroides.h"
 
-
-class Asteroide {
+class Asteroide :public ListAsteroides{
 
 public:
-	//bool isdestruct;
 	Asteroide();
 
 	Asteroide(float posX_ = 0.0f, float posY_ = 0.0f) :
-		posX(posX_), posY(posY_), VposX(0.005f), VposY(0.02f),
-		r(1.0f), g(0.6f), b(0.5f)
+		posX(posX_), posY(posY_), VposX(0.05f), VposY(0.02f),
+		r(.0f), g(0.0f), b(1.0f)
 	{}
 
 	~Asteroide();
@@ -21,10 +21,11 @@ public:
 	float VposX, VposY;
 	float r, g, b;
 
-	void draw();
+	virtual void draw();
 	void tick();
 	void drawAsteroide();
-	bool isCollided(float mposX, float aposX, float aposY,float mposY);
+	bool isCollidedMissile(Missile *missile);
+	bool isCollidedVaisseau(Vaisseau *vaisseau);
 	bool heFreed(float x);
 
 };
