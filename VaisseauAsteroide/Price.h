@@ -4,6 +4,6 @@ class Price{
 private:
 	int p;
 public:
-	int getPrix();
-	void setPrix(int newPrix);
+	int getPrice();
+	void setPrice(int newPrice);
 };

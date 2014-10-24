@@ -6,7 +6,6 @@
 
 class Dame {
 
-	
 
 public:
 	Dame();

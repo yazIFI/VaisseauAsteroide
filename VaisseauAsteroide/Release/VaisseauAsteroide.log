@@ -1,24 +1,22 @@
-﻿La génération a démarré 13/10/2014 00:52:59.
+﻿La génération a démarré 24/10/2014 23:38:10.
      1>Projet "C:\Users\yezide\Desktop\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyGraphicEngine.cpp
-         MyGraphicEngine.cpp
-     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Missile.h(23): warning C4520: 'Missile' : plusieurs constructeurs par défaut spécifiés
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyControlEngine.cpp
+         MyControlEngine.cpp
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Missile.h(37): warning C4520: 'Missile' : plusieurs constructeurs par défaut spécifiés
      1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Case.h(39): warning C4520: 'Case' : plusieurs constructeurs par défaut spécifiés
-     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Asteroide.h(31): warning C4520: 'Asteroide' : plusieurs constructeurs par défaut spécifiés
-     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Dame.h(31): warning C4520: 'Dame' : plusieurs constructeurs par défaut spécifiés
-     1>MyGraphicEngine.cpp(75): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGraphicEngine.cpp(84): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGraphicEngine.cpp(86): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGraphicEngine.cpp(88): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGraphicEngine.cpp(118): warning C4018: '<' : incompatibilité signed/unsigned
-     1>MyGraphicEngine.cpp(148): warning C4101: 'lastx' : variable locale non référencée
-     1>MyGraphicEngine.cpp(148): warning C4101: 'lasty' : variable locale non référencée
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Asteroide.h(48): warning C4520: 'Asteroide' : plusieurs constructeurs par défaut spécifiés
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\Dame.h(30): warning C4520: 'Dame' : plusieurs constructeurs par défaut spécifiés
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\DimensionWindow.h(13): warning C4042: 'newWidth' : classe de stockage incorrecte
+     1>c:\users\yezide\desktop\vaisseauasteroide\vaisseauasteroide\DimensionWindow.h(15): warning C4042: 'newHeight' : classe de stockage incorrecte
+     1>MyControlEngine.cpp(53): warning C4018: '>=' : incompatibilité signed/unsigned
+     1>MyControlEngine.cpp(138): warning C4018: '<' : incompatibilité signed/unsigned
        Link:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.exe" /NOLOGO /LIBPATH:"C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\libWin" engine.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.lib" /MACHINE:X86 /SAFESEH Release\Asteroide.obj
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.exe" /NOLOGO /LIBPATH:..\libWin engine.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Release\VaisseauAsteroide.lib" /MACHINE:X86 /SAFESEH Release\Asteroide.obj
          Release\Case.obj
          Release\Collision.obj
          Release\Dame.obj
+         Release\DimensionWindow.obj
          Release\ListAsteroides.obj
          Release\ListVaisseau.obj
          Release\main.obj
@@ -27,6 +25,7 @@
          Release\MyControlEngine.obj
          Release\MyGameEngine.obj
          Release\MyGraphicEngine.obj
+         Release\Part.obj
          Release\Player.obj
          Release\Price.obj
          Release\Score.obj
@@ -43,4 +42,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:07.05
+Temps écoulé 00:00:06.57

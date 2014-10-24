@@ -56,13 +56,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\yezide\Documents\Visual Studio 2013\Projects\uselibgraph\libWin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libWin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>engine.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -71,6 +71,7 @@
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Dame.cpp" />
+    <ClCompile Include="DimensionWindow.cpp" />
     <ClCompile Include="ListAsteroides.cpp" />
     <ClCompile Include="ListVaisseau.cpp" />
     <ClCompile Include="main.cpp" />
@@ -79,6 +80,7 @@
     <ClCompile Include="MyControlEngine.cpp" />
     <ClCompile Include="MyGameEngine.cpp" />
     <ClCompile Include="MyGraphicEngine.cpp" />
+    <ClCompile Include="Part.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Price.cpp" />
     <ClCompile Include="Score.cpp" />
@@ -89,6 +91,7 @@
     <ClInclude Include="Case.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Dame.h" />
+    <ClInclude Include="DimensionWindow.h" />
     <ClInclude Include="ListAsteroides.h" />
     <ClInclude Include="ListVaisseau.h" />
     <ClInclude Include="Missile.h" />
@@ -96,6 +99,7 @@
     <ClInclude Include="MyControlEngine.h" />
     <ClInclude Include="MyGameEngine.h" />
     <ClInclude Include="MyGraphicEngine.h" />
+    <ClInclude Include="Part.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Price.h" />
     <ClInclude Include="Score.h" />

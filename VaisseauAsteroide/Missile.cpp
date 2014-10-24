@@ -1,11 +1,54 @@
 #include "Missile.h"
 #include "Asteroide.h"
+
+int Missile::dimensionMissile = 0.01;
+
 void Missile::drawMissile(){
-	GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 1.0f, 0.0f, 0.0f);
+	
+	GraphicPrimitives::drawFillRect2D(posX, posY, getWidth(), getHeight(), 1.0f, 0.0f, 0.0f);
 }
 Missile::~Missile(){}
 
+float Missile::getPosX(){
+	return posX;
+}
+float Missile::getPosY(){
+	return posY;
+}
+float Missile::getVposX(){
+	return VposX;
+}
+float Missile::getWidth(){
+	return width;
+}
+float Missile::getHeight(){
+	return height;
+}
+float Missile::getDimensionMissile(){
+	return dimensionMissile;
+}
+
+void  Missile::setPosX(float newPosX){
+	posX = newPosX;
+}
+void  Missile::setPosY(float newPosY){
+	posY = newPosY;
+}
+void Missile::setVposX(float newVposX){
+	VposX = newVposX;
+}
+void  Missile::setWidth(float newWidth){
+	width = newWidth;
+}
+void  Missile::setHeight(float newHeight){
+	height = newHeight;
+}
+
+void Missile::setDimensionMissile(int newDimension){
+	dimensionMissile = newDimension;
+}
+
 void Missile::tick(){
 
-	posX += 0.03;
+	setPosX(getPosX() + getVposX());
 }

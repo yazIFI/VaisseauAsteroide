@@ -3,5 +3,5 @@
 class Score{
 public:
 	int score;
-	virtual void draw();
+	virtual void draw(int score);
 };

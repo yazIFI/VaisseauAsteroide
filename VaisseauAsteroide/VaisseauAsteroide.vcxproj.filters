@@ -19,24 +19,6 @@
     <Filter Include="Fichiers sources\Engine">
       <UniqueIdentifier>{9ae5e1a9-cbce-4ebd-aef5-471d21378596}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Forme">
-      <UniqueIdentifier>{6d153e75-2b10-4a58-a4f1-cff6920fe8db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Forme">
-      <UniqueIdentifier>{a5f004ef-733d-4505-8e69-4ecce941328f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Forme\Vaisseau">
-      <UniqueIdentifier>{a4ccb345-f17f-4ce6-b425-af480954e16c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Forme\Asteroide">
-      <UniqueIdentifier>{289df75a-3e22-4941-9405-660989dbeb89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Forme\Vaisseau">
-      <UniqueIdentifier>{c1556b30-209b-4db8-b7f0-35d93c91aa67}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Forme\Asteroide">
-      <UniqueIdentifier>{b82791b8-2ff5-4e90-a300-43225b8c984d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\Damier">
       <UniqueIdentifier>{c66dfa5e-b693-4ed1-81cd-b7ad8fcdcbc6}</UniqueIdentifier>
     </Filter>
@@ -48,6 +30,30 @@
     </Filter>
     <Filter Include="Fichiers sources\Player">
       <UniqueIdentifier>{ebea46a3-5c09-45ce-bff3-0eba6e9d8ee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Formes">
+      <UniqueIdentifier>{a5f004ef-733d-4505-8e69-4ecce941328f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Formes\Vaisseau">
+      <UniqueIdentifier>{a4ccb345-f17f-4ce6-b425-af480954e16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Formes\Asteroide">
+      <UniqueIdentifier>{289df75a-3e22-4941-9405-660989dbeb89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Formes">
+      <UniqueIdentifier>{6d153e75-2b10-4a58-a4f1-cff6920fe8db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Formes\Vaisseau">
+      <UniqueIdentifier>{c1556b30-209b-4db8-b7f0-35d93c91aa67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Formes\Asteroide">
+      <UniqueIdentifier>{b82791b8-2ff5-4e90-a300-43225b8c984d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Play">
+      <UniqueIdentifier>{130e3b36-1ec2-4b5f-bad7-22cdcc9a0dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Play">
+      <UniqueIdentifier>{7999eb5f-5953-46b7-a73d-f4ed254ef900}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,23 +69,20 @@
     <ClCompile Include="MyGraphicEngine.cpp">
       <Filter>Fichiers sources\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Asteroide.cpp">
-      <Filter>Fichiers sources\Forme\Asteroide</Filter>
+      <Filter>Fichiers sources\Formes\Asteroide</Filter>
     </ClCompile>
     <ClCompile Include="ListAsteroides.cpp">
-      <Filter>Fichiers sources\Forme\Asteroide</Filter>
+      <Filter>Fichiers sources\Formes\Asteroide</Filter>
     </ClCompile>
     <ClCompile Include="Vaisseau.cpp">
-      <Filter>Fichiers sources\Forme\Vaisseau</Filter>
+      <Filter>Fichiers sources\Formes\Vaisseau</Filter>
     </ClCompile>
     <ClCompile Include="ListVaisseau.cpp">
-      <Filter>Fichiers sources\Forme\Vaisseau</Filter>
+      <Filter>Fichiers sources\Formes\Vaisseau</Filter>
     </ClCompile>
     <ClCompile Include="Missile.cpp">
-      <Filter>Fichiers sources\Forme</Filter>
+      <Filter>Fichiers sources\Formes</Filter>
     </ClCompile>
     <ClCompile Include="Case.cpp">
       <Filter>Fichiers sources\Damier</Filter>
@@ -97,7 +100,16 @@
       <Filter>Fichiers sources\Player</Filter>
     </ClCompile>
     <ClCompile Include="Price.cpp">
-      <Filter>Fichiers sources\Forme\Vaisseau</Filter>
+      <Filter>Fichiers sources\Formes\Vaisseau</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Fichiers sources\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Part.cpp">
+      <Filter>Fichiers sources\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="DimensionWindow.cpp">
+      <Filter>Fichiers sources\Damier</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,23 +122,20 @@
     <ClInclude Include="MyGraphicEngine.h">
       <Filter>Fichiers d%27en-tête\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Asteroide.h">
-      <Filter>Fichiers d%27en-tête\Forme\Asteroide</Filter>
+      <Filter>Fichiers d%27en-tête\Formes\Asteroide</Filter>
     </ClInclude>
     <ClInclude Include="ListAsteroides.h">
-      <Filter>Fichiers d%27en-tête\Forme\Asteroide</Filter>
+      <Filter>Fichiers d%27en-tête\Formes\Asteroide</Filter>
     </ClInclude>
     <ClInclude Include="Vaisseau.h">
-      <Filter>Fichiers d%27en-tête\Forme\Vaisseau</Filter>
+      <Filter>Fichiers d%27en-tête\Formes\Vaisseau</Filter>
     </ClInclude>
     <ClInclude Include="ListVaisseau.h">
-      <Filter>Fichiers d%27en-tête\Forme\Vaisseau</Filter>
+      <Filter>Fichiers d%27en-tête\Formes\Vaisseau</Filter>
     </ClInclude>
     <ClInclude Include="Missile.h">
-      <Filter>Fichiers d%27en-tête\Forme</Filter>
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
     </ClInclude>
     <ClInclude Include="Case.h">
       <Filter>Fichiers d%27en-tête\Damier</Filter>
@@ -144,7 +153,16 @@
       <Filter>Fichiers d%27en-tête\Player</Filter>
     </ClInclude>
     <ClInclude Include="Price.h">
-      <Filter>Fichiers d%27en-tête\Forme\Vaisseau</Filter>
+      <Filter>Fichiers d%27en-tête\Formes\Vaisseau</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Fichiers d%27en-tête\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Part.h">
+      <Filter>Fichiers d%27en-tête\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="DimensionWindow.h">
+      <Filter>Fichiers d%27en-tête\Damier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

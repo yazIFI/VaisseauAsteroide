@@ -1,8 +1,8 @@
 #include "Price.h"
 
-int Price::getPrix(){
+int Price::getPrice(){
 	return p;
 }
-void Price::setPrix(int newPrix){
-	p = newPrix;
+void Price::setPrice(int newPrice){
+	p = newPrice;
 }

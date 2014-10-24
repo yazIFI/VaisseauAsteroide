@@ -3,22 +3,26 @@
 #include "Case.h"
 #include "Missile.h"
 #include "Price.h"
+
 class Vaisseau :public Price{
 
 private:
 	float posX1, posY1, posX2, posY2, posX3, posY3;
 	float r, g, b;
+	Price priceVaisseau;
 
 public:
+	int dimens;
 	Vaisseau();
 	~Vaisseau();
+	std::vector<Missile *> *missilesV = new std::vector < Missile * >;
 	Vaisseau(float posX1_, float posY1_, float r_, float g_, float b_, Missile *missile_ = nullptr) :
 		posX1(posX1_), posY1(posY1_), posX2(posX1), posY2(posY1 + 0.16), posX3(posX1 + 0.16), posY3(posY1 + 0.08), r(r_), g(g_), b(b_),
-		mis(missile_)
+		priceVaisseau(),mis(missile_)
 	{
 		missilesV->push_back(mis);
 	}
-	std::vector<Missile *> *missilesV = new std::vector < Missile * > ;
+	
 	Missile *mis;
 	void draw();
 	//Getter

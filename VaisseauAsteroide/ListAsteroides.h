@@ -9,5 +9,6 @@ public:
 	void drawChoiceAst();
 	int boxChoice(float x, float y);
 	virtual void draw(float x, float y, float r, float g, float b,int choice);
+	static bool isEmpty;
 
 };

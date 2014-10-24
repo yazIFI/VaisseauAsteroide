@@ -1,5 +1,48 @@
 #include "Asteroide.h"
+#include "Part.h"
 
+float Asteroide::getPosX(){
+	return posX;
+}
+float Asteroide::getPosY(){
+	return posY;
+}
+float Asteroide::getVposX(){
+	return VposX;
+}
+float Asteroide::getVposY(){
+	return VposY;
+}
+float Asteroide::getR(){
+	return r;
+}
+float Asteroide::getG(){
+	return g;
+}
+float Asteroide::getB(){
+	return b;
+}
+void  Asteroide::setPosX(float newPosX){
+	posX = newPosX;
+}
+void  Asteroide::setPosY(float newPosY){
+	posY = newPosY;
+}
+void Asteroide::setVposX(float newVposX){
+	VposX = newVposX;
+}
+void Asteroide::setVposY(float newVposY){
+	VposY = newVposY;
+}
+void Asteroide::setR(float newR){
+	r = newR;
+}
+void Asteroide::setG(float newG){
+	g = newG;
+}
+void Asteroide::setB(float newB){
+	b = newB;
+}
 
 void Asteroide::draw(){
 	std::vector<float> *vx = new std::vector<float>;
@@ -34,28 +77,31 @@ void Asteroide::draw(){
 	delete vx, vy, vx2, vy2;
 }
 
-void Asteroide::tick(){
-		posX -= VposX;
-		//posY = ((float)(rand() % 10) / 10);
-}
 
 bool Asteroide::isCollidedMissile(Missile *missile){
-	if ((abs((this->posX - missile->posX)) <= 0.16)){
+	if ((abs((this->posX - missile->getPosX())) <= 0.12)){
 		return true;
 	}
 	return false;
 }
 bool Asteroide::isCollidedVaisseau(Vaisseau *vaisseau){
-	if ((abs(vaisseau->getPosX1() - posX) <= 0.2) && 
-		(((abs(posY - vaisseau->getPosY2()) == 0.16)) || ((abs(vaisseau->getPosY2() - posY) <= 0.16)))){
-		
+	if ((abs(vaisseau->getPosX3() - posX) <= 0.12)){
 		return true;
 	}
 	return false;
 }
-bool Asteroide::heFreed(float x){
-	if (x <= -1){
+bool Asteroide::heFreed(){
+	if (getPosX() <= -0.9){
 		return true;
 	}
 	return false;
+}
+
+void Asteroide::tick(){
+	float step;
+	/*if (Part::getLevel()>1){
+		posX -= (VposX*Part::getLevel());
+	}*/
+	posX -= 0.003;
+	//posY = ((float)(rand() % 10) / 10);
 }

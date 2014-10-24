@@ -1,13 +1,13 @@
 #include "Vaisseau.h"
 
 
-
 void Vaisseau::draw(){
+
 	GraphicPrimitives::drawFillTriangle2D(posX1, posY1, posX2, posY2, posX3, posY3, r, g, b);
 }
 
 Vaisseau::~Vaisseau(){
-	//delete missilesV;
+	delete missilesV;
 }
 
 //Getter
@@ -71,6 +71,6 @@ void Vaisseau::setB(float newB){
 
 void Vaisseau::tick(){
 	for (int i = 0; i < missilesV->size(); i++){
-		(*missilesV)[i]->posX += 0.1;
+		(*missilesV)[i]->setPosX((*missilesV)[i]->getPosX() + 0.02);
 	}
 }

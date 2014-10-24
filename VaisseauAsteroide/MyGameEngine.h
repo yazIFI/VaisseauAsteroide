@@ -8,7 +8,6 @@
 
 
 class MyGameEngine :public GameEngine {
-
 public:
 	int compte = 0;
 	std::vector<Dame * > *dames = new std::vector < Dame * >;

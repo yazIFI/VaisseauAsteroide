@@ -5,21 +5,28 @@
 #include "Vaisseau.h"
 #include "Case.h"
 #include "Score.h"
-MyControlEngine::MyControlEngine(){}
+#include "Player.h"
+#include "Part.h"
+#include "DimensionWindow.h"
 
 float r1, g1, b1 = 1.0f;
-int herewego = 0;
-int score = 10;
+float width = 0.02;
+float height = 0.01;
+
+bool heSelected = false;
+int numberSelection = 0;
 std::vector<Case *> *listC = new std::vector < Case * > ;
 
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-
-		float x1 = (x - 400) / 400.f;
-		float y1 = (y - 300) / -300.f;
-
-		int caseChoisie = ((int)((x1 + 1) / 0.18) + (10 * (int)((y1 + 1) / 0.18)));
+		float x1 = (x - (DimensionWindow::getWidth() / 2)) / (DimensionWindow::getWidth() / 2.f);
+		float y1 = (y - (DimensionWindow::getHeight() / 2)) / (-DimensionWindow::getHeight()
+			/ 2.f);
+		int caseChoisie;
+		if ((x1 < 0.8) && (y1 < 0.8)){
+			caseChoisie = ((int)((x1 + 1) / 0.18) + (10 * (int)((y1 + 1) / 0.18)));
+		}
 		triangleSelected(x1, y1);
 		listCases(listC);
 		remplirVectVaisseaux(listVaisseaux, listC, caseChoisie);
@@ -40,19 +47,27 @@ MyControlEngine::~MyControlEngine(){
 
 void MyControlEngine::remplirVectVaisseaux(std::vector<Vaisseau *> *v,std::vector<Case *> *c, int nbCase){
 	if (c->size() >= nbCase){
-		if (nbCase <= 100 && (*c)[nbCase]->getPosX() < 0.7){
-			v->push_back(new Vaisseau((*c)[nbCase]->getPosX(), (*c)[nbCase]->getPosY(), r1, g1, b1,
-				new Missile((*c)[nbCase]->getPosX() + 0.08, (*c)[nbCase]->getPosY() + 0.07)));
-			
+		if ((nbCase < 100)){
+			if (heSelected){
+				if (notAlreadySelected(v, ((*c)[nbCase]->getPosX()), ((*c)[nbCase]->getPosY()))){
+					Missile miss((*c)[nbCase]->getPosX() + 0.08, (*c)[nbCase]->getPosY() + 0.07);
+					v->push_back(new Vaisseau((*c)[nbCase]->getPosX(), (*c)[nbCase]->getPosY(), r1, g1, b1, &miss));
+					Player::setScore(Player::getScore() - (numberSelection * 10));
+					heSelected = false;
+					(*v)[v->size() - 1]->dimens = numberSelection;
+				}
+			}
+			else{
+				MessageBox(NULL, "veuillez choisir un vaisseau", 0, 0);
+			}
 		}
 	}
 
 }
 
 void MyControlEngine::addAsteroide(float x, float y){
-	if ((x >= 0.2) && (y >= 0.8) && herewego == 0){
-		asteroides->push_back(new Asteroide(x, y));
-		herewego += 1;
+	if (((x >= 0.5) && (x<=0.8)) && ((y >= 0.8) && (y<=0.88)) && Part::go == 0){
+		Part::go = 1;
 	}
 }
 
@@ -75,31 +90,53 @@ void MyControlEngine::listCases(std::vector<Case *> *c){
 
 
 void MyControlEngine::triangleSelected(float xx, float yy){
-
 	if (yy >= 0.8){
-		if ((xx >= -0.6) && (xx <= -0.4)){
+		if ((xx >= -0.6) && (xx <= -0.4) && Player::getScore() >= 10){
 			r1 = 1.f;
 			g1 = 0.5f;
 			b1 = 0.0f;
+			heSelected = true;
+			numberSelection = 1;
 
 		}
-		else if ((xx >= -0.4) && (xx <= -0.2)){
+		else if ((xx >= -0.4) && (xx <= -0.2) && Player::getScore() >= 20){
 			r1 = 0.0f;
 			g1 = 0.0f;
 			b1 = 0.5f;
+			heSelected = true;
+			numberSelection = 2;
+
 
 		}
-		else if ((xx >= -0.2) && (xx <= 0.0)){
+		else if ((xx >= -0.2) && (xx <= 0.0) && Player::getScore() >= 30){
 			r1 = 0.5f;
 			g1 = 1.0f;
 			b1 = 0.5f;
+			heSelected = true;
+			numberSelection = 3;
+
 
 		}
 		else{
-			r1 = 0.0f;
-			g1 = 0.0f;
-			b1 = 0.0f;
+			if (xx <= 0.0 && xx >= -0.6){
+				MessageBox(NULL, "Votre solde est insifusant pour acheter ce type de vaisseau", 0, 0);
+			}
 		}
-
+		
 	}
+	
+}
+
+/*verifie que la case selectionnée n'est pas déjà occupé
+return bool*/
+
+bool MyControlEngine::notAlreadySelected(std::vector<Vaisseau *> *v, float x, float y){
+	for (int i = 0; i < v->size(); i++){
+		if ((x == (*v)[i]->getPosX1()) && (y == (*v)[i]->getPosY1())){
+			MessageBox(NULL, "case déjà selectionnée", 0, 0);
+			return false;
+		}
+	}
+	
+	return true;
 }

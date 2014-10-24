@@ -7,6 +7,8 @@
 #include "Asteroide.h"
 #include "Case.h"
 #include "Vaisseau.h"
+#include "Player.h"
+#include "Part.h"
 
 using namespace std;
 
@@ -19,21 +21,41 @@ public:
 	std::vector<Missile * > *missiles = new std::vector < Missile * >;
 	std::vector<Asteroide *> *asteroides = new std::vector < Asteroide * >;
 	std::vector<Vaisseau *> *vaisseaux = new std::vector < Vaisseau * > ;
-
+	Player player;
 
 	int col;
+	int n = 0;
 	MyGraphicEngine();
 
-	MyGraphicEngine(std::vector<Dame *> * dames_, std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missiles_,std::vector<Vaisseau *> * vaisseaux_) :
+	MyGraphicEngine(std::vector<Dame *> * dames_, std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missiles_,std::vector<Vaisseau *> * vaisseaux_,Player player_) :
 		dames(dames_),
 		asteroides(asteroides_),
 		missiles(missiles_),
-		vaisseaux(vaisseaux_)
+		vaisseaux(vaisseaux_),
+		player(player_)
 	{
-		if (MessageBox(NULL, "Voulez vous un vaisseau Bleu?", "CHOIX DE LA COULEUR DU VAISSEAU", 0 + MB_YESNO + MB_ICONQUESTION) == 6)
+		if (MessageBox(NULL, "Niveau débutant", "CHOIX DE NIVEAU", 0 + MB_YESNO + MB_ICONQUESTION) == 6)
 		{
-			cout << "vous avez choisie un vaisseau de couleur bleu :) " << endl;
+			n = 1;
+			Part::setLevel(n);
+			Part::setPastDt(6000);
+			MessageBox(NULL, "Le jeux va commencer . veuillez choisir vos vaisseaux", 0, 0);
+			
+		
 		}
+		else if (MessageBox(NULL, "Niveau intérmediaire", "CHOIX DE NIVEAU", 0 + MB_YESNO + MB_ICONQUESTION) == 6)
+		{
+			n = 2;
+			Part::setLevel(n);
+			Part::setPastDt(4000);
+			MessageBox(NULL, "Le jeux va commencer . veuillez choisir vos vaisseaux", 0, 0);
+		}
+		else{
+			MessageBox(NULL, "Vous avez choisi aucun niveau , veullez choisir un niveau", 0, 0);
+			
+		}
+
+		
 	}
 	~MyGraphicEngine();
 
@@ -42,6 +64,7 @@ public:
 	void color();
 	void traceRedLine();
 	virtual void reshape(int width, int height);
+	void polygon(float xc, float yc, float x, float y, int n);
 	std::vector< Case *> getCase();
 
 
