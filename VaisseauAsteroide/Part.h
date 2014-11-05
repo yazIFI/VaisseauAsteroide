@@ -15,4 +15,7 @@ public:
 	static void setPastDt(int newPastDt);
 	static void setNbVague(int newNbVague);
 	static void partieFnished();
+	static bool isUpdate;;
+	static void reset();
+	static void choiceToContinue();
 };

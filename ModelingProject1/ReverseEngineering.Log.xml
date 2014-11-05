@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Génération de code/Journal de transformation de texte">
+  <MessageClass Name="Message" Label="Message" Option="Afficher les messages d'information" />
+  <MessageClass Name="Warning" Label="Avertissement" Option="Afficher les avertissements" />
+  <MessageClass Name="Error" Label="Erreur" Option="Afficher les erreurs" />
+  <MessageClass Name="Property" Label="Propriété" Option="Afficher les métadonnées" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Afficher les messages de diagnostic" />
+  <Message Timestamp="2014-11-05T11:27:11" Importance="High" Text="Processus d'ingénierie à rebours démarré." />
+  <Error Timestamp="2014-11-05T11:27:11" Importance="High" Text="Le type C++ d'ingénierie à rebours n'est pas pris en charge. Certains nœuds DGML seront ignorés lors de ce processus. Reportez-vous aux avertissements pour plus de détails." />
+  <Warning Timestamp="2014-11-05T11:27:11" Importance="Medium" Text="Le type C++ d'ingénierie à rebours 'Asteroide' a été ignoré." />
+  <Message Timestamp="2014-11-05T11:27:11" Importance="High" Text="(0) type(s) ayant fait l'objet d'une ingénierie à rebours complète." />
+  <Message Timestamp="2014-11-05T11:27:11" Importance="High" Text="L'opération d'ingénierie à rebours s'est terminée avec (1) erreur(s) et (1) avertissement(s)." />
+</Log>

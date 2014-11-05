@@ -44,9 +44,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\yezide\Desktop\VaisseauAsteroide\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\libWin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>engine.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -57,6 +60,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -65,9 +69,14 @@
       <AdditionalLibraryDirectories>..\libWin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>engine.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Asteroide.cpp" />
+    <ClCompile Include="B.cpp" />
+    <ClCompile Include="C.cpp" />
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Dame.cpp" />
@@ -82,16 +91,18 @@
     <ClCompile Include="MyGraphicEngine.cpp" />
     <ClCompile Include="Part.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Price.cpp" />
-    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Vaisseau.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="A.h" />
     <ClInclude Include="Asteroide.h" />
+    <ClInclude Include="B.h" />
+    <ClInclude Include="C.h" />
     <ClInclude Include="Case.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Dame.h" />
     <ClInclude Include="DimensionWindow.h" />
+    <ClInclude Include="Engin.h" />
     <ClInclude Include="ListAsteroides.h" />
     <ClInclude Include="ListVaisseau.h" />
     <ClInclude Include="Missile.h" />
@@ -101,9 +112,15 @@
     <ClInclude Include="MyGraphicEngine.h" />
     <ClInclude Include="Part.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Price.h" />
-    <ClInclude Include="Score.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Vaisseau.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VaisseauAsteroide.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

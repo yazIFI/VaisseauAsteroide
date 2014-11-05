@@ -2,10 +2,11 @@
 #include "MyGraphicEngine.h"
 #include "Asteroide.h"
 
+#define PI 3.141592653589
 
 bool ListAsteroides::isEmpty = false;
 
-void ListAsteroides::draw1(float x, float y , float r , float g, float b){
+/*void ListAsteroides::draw1(float x, float y , float r , float g, float b){
 	std::vector<float> *vx = new std::vector<float>;
 	std::vector<float> *vy = new std::vector<float>;
 	
@@ -18,9 +19,9 @@ void ListAsteroides::draw1(float x, float y , float r , float g, float b){
 
 
 	delete vx, vy;
-}
+}*/
 
-void ListAsteroides::draw2(float posX, float posY,float r, float g, float b){
+void ListAsteroides::losange(float posX, float posY,float r, float g, float b){
 	std::vector<float> *vx = new std::vector<float>;
 	std::vector<float> *vy = new std::vector<float>;
 	
@@ -47,9 +48,44 @@ void ListAsteroides::draw2(float posX, float posY,float r, float g, float b){
 	delete vx, vy;
 }
 
-void ListAsteroides::draw3(float x, float y, float r, float g, float b){
+void ListAsteroides::polygone(float xc, float yc, float r, float g, float b, int n, bool fill){
+	float x = 0.0;
+	float y = 0.0;
+	std::vector<float> *vx = new std::vector<float>;
+	std::vector<float> *vy = new std::vector<float>;
+	float a = atan2(y - yc, x - xc);
+	int i;
 
+	for (i = 1; i <= n; i++) {
+		a = a + PI * 2 / n;
+		x = xc + (0.7 * cos(a) / 6);
+		y = yc + (0.7 * sin(a) / 6);
+		vx->push_back(x); vy->push_back(y);
+	}
+	if (fill){ GraphicPrimitives::drawFillPolygone2D(*vx, *vy, r, g, b, 1.0f); }
+	else{ GraphicPrimitives::drawOutlinedPolygone2D(*vx, *vy, r, g, b, 1.0f); }
+	delete vx, vy;
 }
+
+void ListAsteroides::draw1(float x, float y, float r, float g, float b){
+	polygone(x, (y - 0.09), r, g, 0.0, 8, true);
+}
+
+void ListAsteroides::draw2(float x, float y, float r, float g, float b){
+	polygone(x, (y - 0.09), r, g, 0.0, 8, true);
+	if (rand() % 2){
+		losange(x, y, r, g, b);
+	}
+}
+
+void ListAsteroides::draw3(float x, float y, float r, float g, float b){
+	polygone(x, (y - 0.09), r, g, 0.0, 10, true);
+	if (rand() % 2){ losange(x, y, r, g, b); }
+	GraphicPrimitives::drawLine2D(x+0.1, y, x-0.1, y - 0.15, 1.0, 0.0, 0.0);
+	GraphicPrimitives::drawLine2D(x-0.1, y, x+0.1, y - 0.15, 1.0, 0.0, 0.0);
+}
+
+
 
 void ListAsteroides::drawChoiceAst(){
 	char *nbVague = new char[10];
@@ -62,38 +98,16 @@ void ListAsteroides::drawChoiceAst(){
 	GraphicPrimitives::drawText2D(nbVague, 0.85, 0.85, 0.0f, 0.0f, 0.0f, 1.0f);
 }
 
-
-int ListAsteroides::boxChoice(float x, float y){
-	if (y >= 0.8){
-		if ((x >= 0.8) && (x < 1.0)){
-			return 1;
-		}
-		else if ((x >= 0.6) && (x < 0.8)){
-			return 2;
-			
-
-		}
-		else if ((x >= 0.4) && (x < 0.6)){
-			return 3;
-
-		}
-		else{
-			return 0;
-		}
-	}
-	return 0;
-}
-
 void ListAsteroides::draw(float x, float y, float r, float g, float b,int choice){
 	
-	if (Part::getLevel() == 1){
-		draw1(x,y,r,g,b);
+	if (Part::getLevel() == 2){
+		 draw2(x, y, r, g, b);
 	}
 	
-	else if (Part::getLevel() == 2){
-		draw2(x,y,r,g,b);
+	else if (Part::getLevel() == 3){
+		draw3(x,y,r,g,b);
 	}
 	else{
-		draw2(x,y,1.0,0.0,0.0);
+		draw1(x,y,r,g,b);
 	}
 }

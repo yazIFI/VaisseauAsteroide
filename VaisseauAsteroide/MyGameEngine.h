@@ -11,15 +11,15 @@ class MyGameEngine :public GameEngine {
 public:
 	int compte = 0;
 	std::vector<Dame * > *dames = new std::vector < Dame * >;
-	std::vector<Missile * > *missiles = new std::vector < Missile * >;
+	std::vector<Missile * > *missiles = new std::vector <Missile * >;
 	std::vector<Asteroide *> *asteroides = new std::vector < Asteroide * >;
 	std::vector<Vaisseau *> *vaisseaux = new std::vector < Vaisseau* > ;
 	float coordAst[10];
 	
 	MyGameEngine();
 
-	MyGameEngine(std::vector<Dame *> *dames_, std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missilies_, std::vector<Vaisseau *> *vaisseaux_) :
-		dames(dames_),
+	MyGameEngine(std::vector<Asteroide * > * asteroides_, std::vector<Missile *> * missilies_, std::vector<Vaisseau *> *vaisseaux_) :
+		
 		asteroides(asteroides_),
 		missiles(missilies_),
 		vaisseaux(vaisseaux_)

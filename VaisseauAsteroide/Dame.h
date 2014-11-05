@@ -23,8 +23,8 @@ public:
 	static float r1, g1, b1;
 	static char s [100];
 	static void draw(std::vector<Case * > *cases);
-	void tick();
+	/*void tick();
 	void drawVaisseau();
-	void drawMissile();
+	void drawMissile();*/
 
 };

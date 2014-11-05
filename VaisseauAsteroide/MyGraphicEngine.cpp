@@ -17,13 +17,10 @@
 #include "MyControlEngine.h"
 #include "DimensionWindow.h"
 
-
 #define PI 3.141592653589
-std::vector<float> *vxTest = new std::vector<float>;
-std::vector<float> *vyTest = new std::vector<float>;
 
 using namespace std;
-
+int comp = 0;
 MyGraphicEngine::~MyGraphicEngine(){
 	delete dames;
 	delete missiles;
@@ -42,13 +39,27 @@ DWORD penalTime = GetTickCount();
 std::vector<Vaisseau * > *choixVaisseau ;
 
 void MyGraphicEngine::Draw(){
-	/*si le joueur ne choisie aucun niveau il est affecté directement au niveau1*/
+	
+	if (Part::isUpdate){
+		Asteroide::reset(asteroides);
+		Vaisseau::reset(vaisseaux);
+		Player::reset();
+		Part::reset();
+		life.reset();
+		Part::choiceToContinue();
+		ListAsteroides::isEmpty = false;
+		
+
+		
+	}
+
+	/*si le joueur ne choisit aucun niveau : il est affecté directement au niveau1*/
 	if (Part::getLevel() == 0){
 		Part::setLevel(1);
 	}
 
 	/*si le temps du jeux est ecoulé , 
-	on affiche le message de la fin du partie*/
+	on affiche le message fin de partie*/
 
 	Part::partieFnished();
 
@@ -68,8 +79,7 @@ void MyGraphicEngine::Draw(){
 					swap((*asteroides)[i], asteroides->back());
 					asteroides->pop_back();
 					
-				}
-				
+				}		
 		}
 
 
@@ -101,7 +111,7 @@ void MyGraphicEngine::Draw(){
 						if (((*asteroides)[k]->getR() >= 1) && ((*asteroides)[k]->getB() <= 0)){
 							swap((*asteroides)[k], asteroides->back());
 							asteroides->pop_back();
-							Player::setScore(Player::getScore() + 5);
+							Player::setMoney(Player::getMoney() + 2);
 						}
 					}
 					
@@ -111,8 +121,7 @@ void MyGraphicEngine::Draw(){
 			(*(*vaisseaux)[i]->missilesV)[j]->drawMissile();
 		}
 	}
-	if ((asteroides->size() == 0) && (Part::getNbVague() >= (5 * Part::getLevel()))){
-
+	if ((asteroides->size() == 0) && (Part::getNbVague() >= 5)){	
 		ListAsteroides::isEmpty = true;
 	}
 	
@@ -130,15 +139,11 @@ void MyGraphicEngine::Draw(){
 	life.drawLifeLine();
 	player.draw();
 	delete choixVaisseau;
-
 }
 
 void MyGraphicEngine::reshape(int width, int height){
 	DimensionWindow::setWidth(width);
 	DimensionWindow::setHeight(height);
-	cout << "width :" << DimensionWindow::getWidth() << endl;
-	cout << "height :" << DimensionWindow::getHeight() << endl;
-
 }
 
 
@@ -149,20 +154,3 @@ std::vector< Case *> MyGraphicEngine::getCase(){
 	return *cases;
 }
 
-
-
-/*void MyGraphicEngine::polygon(float xc, float yc, float x, float y, int n) {
-
-	int lastx, lasty;
-	float r = sqrt((x - xc) * (x - xc) + (y - yc) * (y - yc));
-	float a = atan2(y - yc, x - xc);
-	int i;
-
-	for (i = 1; i <= n; i++) {
-		a = a + PI * 2 / n;
-		x = xc + (r * cos(a) / 6);
-		y = yc + (r * sin(a) / 6);
-		vxTest->push_back(x); vyTest->push_back(y);
-	}
-	GraphicPrimitives::drawOutlinedPolygone2D(*vxTest, *vyTest, 1.0, 0.0, 0.0, 1.0f);
-}*/

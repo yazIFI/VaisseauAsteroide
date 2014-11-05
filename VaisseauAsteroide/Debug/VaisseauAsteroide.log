@@ -1,24 +1,40 @@
-﻿La génération a démarré 06/10/2014 21:14:39.
-     1>Projet "C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Asteroide.cpp Dame.cpp main.cpp Missile.cpp MyControlEngine.cpp MyGameEngine.cpp MyGraphicEngine.cpp
-         MyGraphicEngine.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\mygraphicengine.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'Engine.h' : No such file or directory
-         MyGameEngine.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\mygameengine.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'Engine.h' : No such file or directory
-         MyControlEngine.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\mycontrolengine.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'Engine.h' : No such file or directory
-         Missile.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\missile.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'GraphicPrimitives.h' : No such file or directory
-         main.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\main.cpp(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'Engine.h' : No such file or directory
-         Dame.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\dame.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'GraphicPrimitives.h' : No such file or directory
-         Asteroide.cpp
-     1>c:\users\yezide\documents\visual studio 2013\projects\vaisseauasteroide\vaisseauasteroide\asteroide.h(2): fatal error C1083: Impossible d'ouvrir le fichier include : 'GraphicPrimitives.h' : No such file or directory
-         Génération de code en cours...
-     1>Génération du projet "C:\Users\yezide\Documents\Visual Studio 2013\Projects\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+﻿La génération a démarré 30/10/2014 14:26:45.
+     1>Projet "C:\Users\yezide\Desktop\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\yezide\Desktop\VaisseauAsteroide\Debug\VaisseauAsteroide.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\libWin engine.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Debug\VaisseauAsteroide.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\yezide\Desktop\VaisseauAsteroide\Debug\VaisseauAsteroide.lib" /MACHINE:X86 Debug\A.obj
+         Debug\Asteroide.obj
+         Debug\Case.obj
+         Debug\Collision.obj
+         Debug\Dame.obj
+         Debug\DimensionWindow.obj
+         Debug\ListAsteroides.obj
+         Debug\ListVaisseau.obj
+         Debug\main.obj
+         Debug\Missile.obj
+         Debug\Life.obj
+         Debug\MyControlEngine.obj
+         Debug\MyGameEngine.obj
+         Debug\MyGraphicEngine.obj
+         Debug\Part.obj
+         Debug\Player.obj
+         Debug\Price.obj
+         Debug\Score.obj
+         Debug\Vaisseau.obj
+         engine.lib(GraphicPrimitives.obj) : .netmodule ou module MSIL compilé avec /GL trouvé ; redémarrage de l'édition de liens avec /LTCG ; ajoutez /LTCG à la ligne de commande de l'édition de liens pour améliorer les performances de l'Éditeur de liens
+     1>LINK : warning LNK4075: ' /INCREMENTAL' ignorÚ Ó cause de la spÚcification '/LTCG'
+     1>A.obj : warning LNK4075: ' /EDITANDCONTINUE' ignorÚ Ó cause de la spÚcification '/OPT:LBR'
+     1>engine.lib(GraphicPrimitives.obj) : error LNK2038: discordance dÚtectÚe pour '_ITERATOR_DEBUG_LEVEL'á: la valeur '0' ne correspond pas Ó la valeur '2' in Asteroide.obj
+     1>engine.lib(GraphicPrimitives.obj) : error LNK2038: discordance dÚtectÚe pour 'RuntimeLibrary'á: la valeur 'MD_DynamicRelease' ne correspond pas Ó la valeur 'MDd_DynamicDebug' in Asteroide.obj
+     1>engine.lib(ControlEngine.obj) : error LNK2038: discordance dÚtectÚe pour '_ITERATOR_DEBUG_LEVEL'á: la valeur '0' ne correspond pas Ó la valeur '2' in Asteroide.obj
+     1>engine.lib(ControlEngine.obj) : error LNK2038: discordance dÚtectÚe pour 'RuntimeLibrary'á: la valeur 'MD_DynamicRelease' ne correspond pas Ó la valeur 'MDd_DynamicDebug' in Asteroide.obj
+     1>engine.lib(GraphicEngine.obj) : error LNK2038: discordance dÚtectÚe pour '_ITERATOR_DEBUG_LEVEL'á: la valeur '0' ne correspond pas Ó la valeur '2' in Asteroide.obj
+     1>engine.lib(GraphicEngine.obj) : error LNK2038: discordance dÚtectÚe pour 'RuntimeLibrary'á: la valeur 'MD_DynamicRelease' ne correspond pas Ó la valeur 'MDd_DynamicDebug' in Asteroide.obj
+     1>engine.lib(Engine.obj) : error LNK2038: discordance dÚtectÚe pour '_ITERATOR_DEBUG_LEVEL'á: la valeur '0' ne correspond pas Ó la valeur '2' in Asteroide.obj
+     1>engine.lib(Engine.obj) : error LNK2038: discordance dÚtectÚe pour 'RuntimeLibrary'á: la valeur 'MD_DynamicRelease' ne correspond pas Ó la valeur 'MDd_DynamicDebug' in Asteroide.obj
+     1>LINK : warning LNK4098: conflit entre la bibliothÞque par dÚfaut 'MSVCRT' et les autres bibliothÞquesá; utilisez /NODEFAULTLIB:library
+     1>C:\Users\yezide\Desktop\VaisseauAsteroide\Debug\VaisseauAsteroide.exe : fatal error LNK1319: 8 discordances dÚtectÚes
+     1>Génération du projet "C:\Users\yezide\Desktop\VaisseauAsteroide\VaisseauAsteroide\VaisseauAsteroide.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
 
 ÉCHEC de la build.
 
-Temps écoulé 00:00:02.46
+Temps écoulé 00:00:00.93

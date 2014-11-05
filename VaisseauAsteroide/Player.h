@@ -1,9 +1,8 @@
 #pragma once
-#include "Score.h"
-class Player :public Score{
+class Player{
 private:
 	char *name;
-	static int score;
+	static int money;
 	
 public:
 	Player(char *name_):
@@ -11,7 +10,8 @@ public:
 
 	char * getName();
 	void setName(char * newName);
-	static int	 getScore();
-	static void setScore(int newScore);
+	static int	 getMoney();
+	static void setMoney(int newMoney);
+	static void reset();
 	virtual void draw();
 };

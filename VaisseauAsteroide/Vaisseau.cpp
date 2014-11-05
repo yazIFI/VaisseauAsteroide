@@ -3,7 +3,7 @@
 
 void Vaisseau::draw(){
 
-	GraphicPrimitives::drawFillTriangle2D(posX1, posY1, posX2, posY2, posX3, posY3, r, g, b);
+	GraphicPrimitives::drawFillTriangle2D(posX, posY, posX2, posY2, posX3, posY3, r, g, b);
 }
 
 Vaisseau::~Vaisseau(){
@@ -11,11 +11,11 @@ Vaisseau::~Vaisseau(){
 }
 
 //Getter
-float Vaisseau::getPosX1(){
-	return posX1;
+float Vaisseau::getPosX(){
+	return posX;
 }
-float Vaisseau::getPosY1(){
-	return posY1;
+float Vaisseau::getPosY(){
+	return posY;
 }
 float Vaisseau::getPosX2(){
 	return posX2;
@@ -40,25 +40,40 @@ float Vaisseau::getB(){
 }
 
 //Setter
-void Vaisseau::setposX1(float newX){
-	posX1 = newX;
+void Vaisseau::setPosX(float newX){
+	posX = newX;
 }
-void Vaisseau::setposY1(float newY){
-	posX1 = newY;
+void Vaisseau::setPosY(float newY){
+	posY = newY;
 }
-void Vaisseau::setposX2(float newX){
+void Vaisseau::setPosX2(float newX){
 	posX2 = newX;
 }
-void Vaisseau::setposY2(float newY){
-	posX2 = newY;
+void Vaisseau::setPosY2(float newY){
+	posY2 = newY;
 }
-void Vaisseau::setposX3(float newX){
+void Vaisseau::setPosX3(float newX){
 	posX3 = newX;
 }
-void Vaisseau::setposY3(float newY){
-	posX3 = newY;
+void Vaisseau::setPosY3(float newY){
+	posY3 = newY;
 }
 
+float Vaisseau::getVposX(){
+	return VposX;
+}
+float Vaisseau::getVposY(){
+	return VposY;
+}
+
+float Vaisseau::getSpeedMissile(){
+	return speedMissile;
+}
+int Vaisseau::getPrice(){
+	return prix;
+}
+
+//Setter
 void Vaisseau::setR(float newR){
 	r = newR;
 }
@@ -69,8 +84,31 @@ void Vaisseau::setB(float newB){
 	b = newB;
 }
 
+void Vaisseau::setVposX(float vx){
+	VposX = vx;
+}
+
+void Vaisseau::setVposY(float vy){
+	VposY = vy;
+}
+
+
+void Vaisseau::setSpeedMissile(int newSpeed){
+	speedMissile = newSpeed;
+}
+
+void Vaisseau::setPrice(int newPrice){
+	prix = newPrice;
+}
+
 void Vaisseau::tick(){
 	for (int i = 0; i < missilesV->size(); i++){
-		(*missilesV)[i]->setPosX((*missilesV)[i]->getPosX() + 0.02);
+		(*missilesV)[i]->Missile::setPosX((*missilesV)[i]->Missile::getPosX() + 0.03);
 	}
 }
+
+
+void Vaisseau::reset(std::vector<Vaisseau *> *vaisseaux){
+	vaisseaux->clear();
+}
+

@@ -18,6 +18,9 @@ float Missile::getPosY(){
 float Missile::getVposX(){
 	return VposX;
 }
+float Missile::getVposY(){
+	return VposY;
+}
 float Missile::getWidth(){
 	return width;
 }
@@ -37,6 +40,9 @@ void  Missile::setPosY(float newPosY){
 void Missile::setVposX(float newVposX){
 	VposX = newVposX;
 }
+void Missile::setVposY(float newVposY){
+	VposY = newVposY;
+}
 void  Missile::setWidth(float newWidth){
 	width = newWidth;
 }
@@ -51,4 +57,8 @@ void Missile::setDimensionMissile(int newDimension){
 void Missile::tick(){
 
 	setPosX(getPosX() + getVposX());
+}
+
+void Missile::draw(){
+
 }

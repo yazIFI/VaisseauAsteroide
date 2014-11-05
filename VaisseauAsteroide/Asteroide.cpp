@@ -103,5 +103,9 @@ void Asteroide::tick(){
 		posX -= (VposX*Part::getLevel());
 	}*/
 	posX -= 0.003;
-	//posY = ((float)(rand() % 10) / 10);
+	//posY = (float)(rand() % 10) / 10;
+}
+
+void Asteroide::reset(std::vector<Asteroide *> *asteroides){
+		asteroides->clear();
 }

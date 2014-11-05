@@ -2,49 +2,59 @@
 #include "GraphicPrimitives.h"
 #include "Case.h"
 #include "Missile.h"
-#include "Price.h"
+#include "Engin.h"
 
-class Vaisseau :public Price{
+class Vaisseau :public Engin{
 
 private:
-	float posX1, posY1, posX2, posY2, posX3, posY3;
+	float posX2, posY2, posX3, posY3;
 	float r, g, b;
-	Price priceVaisseau;
+	float speedMissile;
+	float prix;
 
 public:
 	int dimens;
 	Vaisseau();
 	~Vaisseau();
-	std::vector<Missile *> *missilesV = new std::vector < Missile * >;
+	std::vector<Missile *> *missilesV = new std::vector <Missile * >;
 	Vaisseau(float posX1_, float posY1_, float r_, float g_, float b_, Missile *missile_ = nullptr) :
-		posX1(posX1_), posY1(posY1_), posX2(posX1), posY2(posY1 + 0.16), posX3(posX1 + 0.16), posY3(posY1 + 0.08), r(r_), g(g_), b(b_),
-		priceVaisseau(),mis(missile_)
+		Engin(posX1_,posY1_), posX2(posX), posY2(posY + 0.16), posX3(posX + 0.16), posY3(posY + 0.08), r(r_), g(g_), b(b_),
+		mis(missile_), speedMissile(0.0)
 	{
 		missilesV->push_back(mis);
 	}
 	
 	Missile *mis;
-	void draw();
+	virtual void draw();
 	//Getter
-	float getPosX1();
-	float getPosY1();
+	virtual float getPosX();
+	virtual float getPosY();
 	float getPosX2();
 	float getPosY2();
 	float getPosX3();
 	float getPosY3();
+	virtual float getVposX();
+	virtual float getVposY();
 	float getR();
 	float getG();
 	float getB();
+	float getSpeedMissile();
+	int getPrice();
 	//Setter
-	void setposX1(float newX);
-	void setposY1(float newY);
-	void setposX2(float newX);
-	void setposY2(float newY);
-	void setposX3(float newX);
-	void setposY3(float newY);
+	virtual void setPosX(float newX);
+	virtual void setPosY(float newY);
+	void setPosX2(float newX);
+	void setPosY2(float newY);
+	void setPosX3(float newX);
+	void setPosY3(float newY);
 	void setR(float newR);
 	void setG(float newG);
 	void setB(float newB);
-
-	void tick();
+	virtual void setVposX(float vPos);
+	virtual void setVposY(float vPos);
+	void setSpeedMissile(int newSpeed);
+	void setPrice(int newPrice);
+	static void reset(std::vector<Vaisseau *> *vaisseaux);
+	
+	virtual void tick();
 };

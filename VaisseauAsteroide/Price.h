@@ -6,4 +6,5 @@ private:
 public:
 	int getPrice();
 	void setPrice(int newPrice);
+	
 };

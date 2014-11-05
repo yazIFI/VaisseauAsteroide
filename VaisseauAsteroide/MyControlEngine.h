@@ -16,8 +16,7 @@ class MyControlEngine :public ControlEngine{
 
 public:
 	MyControlEngine();
-	MyControlEngine(std::vector<Dame * > * dames_, std::vector<Missile * > * missiles_, std::vector<Vaisseau *> *listVaisseaux_, std::vector<Asteroide *> *asteroides_,Player player_) :
-		dames(dames_),
+	MyControlEngine(std::vector<Missile * > * missiles_, std::vector<Vaisseau *> *listVaisseaux_, std::vector<Asteroide *> *asteroides_,Player player_) :
 		missiles(missiles_),
 		listVaisseaux(listVaisseaux_),
 		asteroides(asteroides_),
